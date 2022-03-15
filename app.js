@@ -11,29 +11,29 @@ hbs.registerPartials(__dirname + '/views/partials');
 //servir contenido estático
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-    res.render('home', {
-        name: 'Milagros Sachetti',
-        title: 'Node course'
-    });
-});
+// app.get('/', (req, res) => {
+//     res.render('home', {
+//         name: 'Milagros Sachetti',
+//         title: 'Node course'
+//     });
+// });
 
-app.get('/generic', (req, res) => {
-    res.render('generic', {
-        name: 'Milagros Sachetti',
-        title: 'Node course'
-    });
-});
+// app.get('/generic', (req, res) => {
+//     res.render('generic', {
+//         name: 'Milagros Sachetti',
+//         title: 'Node course'
+//     });
+// });
 
-app.get('/elements', (req, res) => {
-    res.render('elements', {
-        name: 'Milagros Sachetti',
-        title: 'Node course'
-    });
-});
+// app.get('/elements', (req, res) => {
+//     res.render('elements', {
+//         name: 'Milagros Sachetti',
+//         title: 'Node course'
+//     });
+// });
 
 app.get('*', (req, res) => {
-    res.sendFile('404 | Page not found');
+    res.sendFile(__dirname + '/public/index.html');
 });
 
 app.listen(port, () => {
